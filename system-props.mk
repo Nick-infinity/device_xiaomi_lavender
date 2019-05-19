@@ -19,11 +19,21 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.imglib.usefdlite=1 \
     persist.vendor.camera.expose.aux=1 \
     persist.vendor.camera.HAL3.enabled=1 \
-    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.lineageos.snap
+    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.lineageos.snap \
+    vendor.camera.hal1.packagelist=com.whatsapp
 
 # CNE and DPM
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.cne.feature=1
+
+# Dalvik
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapstartsize=8m \
+    dalvik.vm.heapgrowthlimit=256m \
+    dalvik.vm.heapsize=512m \
+    dalvik.vm.heaptargetutilization=0.75 \
+    dalvik.vm.heapminfree=512k \
+    dalvik.vm.heapmaxfree=8m
 
 # Data modules
 PRODUCT_PROPERTY_OVERRIDES += \

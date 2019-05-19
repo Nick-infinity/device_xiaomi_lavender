@@ -1,5 +1,5 @@
 # 
-# Copyright (C) 2017-2018 The LineageOS Project
+# Copyright (C) 2017-2018 The AOSP Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,10 +21,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from jason device
 $(call inherit-product, device/xiaomi/lavender/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common PE stuff.
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+TARGET_BOOT_ANIMATION_RES :=1080
+TARGET_GAPPS_ARCH := arm64
 
-PRODUCT_NAME := lineage_lavender
+PRODUCT_NAME := aosp_lavender
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := lavender
 PRODUCT_MANUFACTURER := Xiaomi
@@ -35,8 +37,6 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="lavender" \
     PRODUCT_NAME="lavender" \
-    PRIVATE_BUILD_DESC="lavender-user 9 PKQ1.180904.001 9.4.10 release-keys"
+    PRIVATE_BUILD_DESC="lavender-user 9 PKQ1.180904.001 10.3.5.0.PFGMIXM release-keys"
 
-BUILD_FINGERPRINT := "xiaomi/lavender/lavender:9/PKQ1.180904.001/9.4.10:user/release-keys"
-
-TARGET_VENDOR := Xiaomi
+BUILD_FINGERPRINT := "xiaomi/lavender/lavender:9/PKQ1.180904.001/V10.3.5.0.PFGMIXM:user/release-keys"
