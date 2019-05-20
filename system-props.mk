@@ -19,8 +19,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.imglib.usefdlite=1 \
     persist.vendor.camera.expose.aux=1 \
     persist.vendor.camera.HAL3.enabled=1 \
-    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.lineageos.snap \
-    vendor.camera.hal1.packagelist=com.whatsapp
+    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.lineageos.snap
 
 # CNE and DPM
 PRODUCT_PROPERTY_OVERRIDES += \

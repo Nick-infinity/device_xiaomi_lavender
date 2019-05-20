@@ -48,7 +48,7 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap
+    GoogleCamera
 
 # Common init scripts
 PRODUCT_PACKAGES += \
@@ -57,6 +57,10 @@ PRODUCT_PACKAGES += \
 # Device fstab
 PRODUCT_PACKAGES += \
     fstab.qcom
+
+# Device-specific settings
+PRODUCT_PACKAGES += \
+    XiaomiParts
 
 # Display
 PRODUCT_PACKAGES += \
@@ -69,6 +73,9 @@ PRODUCT_PACKAGES += \
     FM2 \
     libqcomfm_jni \
     qcom.fmradio
+	
+# GoogleCamera
+$(call inherit-product, packages/apps/GoogleCameraMod/config.mk)
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -76,6 +83,15 @@ PRODUCT_PACKAGES += \
     android.hidl.base@1.0_system \
     android.hidl.manager@1.0 \
     android.hidl.manager@1.0_system
+	
+# Hostapd
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/hostapd/hostapd.accept:system/etc/hostapd/hostapd.accept \
+    $(LOCAL_PATH)/configs/hostapd/hostapd.deny:system/etc/hostapd/hostapd.deny \
+    $(LOCAL_PATH)/configs/hostapd/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf
+
+PRODUCT_PACKAGES += \
+    move_wifi_data.sh
 
 # IMS
 PRODUCT_PACKAGES += \
@@ -95,6 +111,10 @@ PRODUCT_COPY_FILES += \
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.xiaomi_sdm660
+	
+# LiveDisplay
+PRODUCT_PACKAGES += \
+    lineage.livedisplay@2.0-service-sdm
 
 # Net
 PRODUCT_PACKAGES += \
@@ -126,3 +146,7 @@ PRODUCT_BOOT_JARS += \
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
     textclassifier.bundle1
+	
+# OTA
+PRODUCT_PACKAGES += \
+    Updates
