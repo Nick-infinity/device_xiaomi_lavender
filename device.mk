@@ -46,10 +46,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:system/etc/audio/audio_policy_configuration.xml
 
-# Camera
-PRODUCT_PACKAGES += \
-    GoogleCamera
-
 # Common init scripts
 PRODUCT_PACKAGES += \
     init.qcom.rc
